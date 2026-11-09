@@ -31,6 +31,8 @@ SECRET_KEY = os.environ.get(
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.0.2.2', '.pythonanywhere.com']
+# 실기기 접속용 PC IP 등은 쉼표로 구분해 추가한다 (예: DJANGO_ALLOWED_HOSTS=192.168.0.10)
+ALLOWED_HOSTS += [h.strip() for h in os.environ.get('DJANGO_ALLOWED_HOSTS', '').split(',') if h.strip()]
 
 # PythonAnywhere는 https 앞단 프록시를 거치므로 원래 요청이 https였음을 인식하게 한다
 # (이미지 절대 URL이 https로 만들어지고, 관리자/브라우저블 API 로그인의 CSRF Origin 검사가 통과됨)
