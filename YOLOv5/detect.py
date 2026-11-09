@@ -46,6 +46,7 @@ ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
 
 from ultralytics.utils.plotting import Annotator, colors, save_one_box
 
+from changedetection import ChangeDetection  # added
 from models.common import DetectMultiBackend
 from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
 from utils.general import (
@@ -171,6 +172,7 @@ def run(
     device = select_device(device)
     model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)
     stride, names, pt = model.stride, model.names, model.pt
+    cd = ChangeDetection(names)  # added
     imgsz = check_img_size(imgsz, s=stride)  # check image size
 
     # Dataloader
@@ -243,6 +245,7 @@ def run(
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
             imc = im0.copy() if save_crop else im0  # for save_crop
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
+            detected = [0 for _ in range(len(names))]  # added
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
@@ -254,6 +257,7 @@ def run(
 
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
+                    detected[int(cls)] = 1  # added
                     c = int(cls)  # integer class
                     label = names[c]
                     confidence = float(conf)
@@ -282,6 +286,7 @@ def run(
 
             # Stream results
             im0 = annotator.result()
+            cd.add(names, detected, save_dir, im0)  # added
             if view_img:
                 if platform.system() == "Linux" and p not in windows:
                     windows.append(p)
