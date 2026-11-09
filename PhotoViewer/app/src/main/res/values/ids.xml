@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ImageLoader: 재활용된 ImageView에 다른 이미지가 늦게 들어가지 않도록 URL을 태그로 기록 -->
+    <item name="tag_image_url" type="id" />
+</resources>

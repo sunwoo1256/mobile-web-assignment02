@@ -1,0 +1,6 @@
+# HTTP 원문(CRLF)은 줄바꿈 변환 없이 바이트 그대로 보관
+*.bin binary
+PhotoBlogServer/tools/telnet_request.txt -text
+
+# 셸 스크립트는 LF 유지 (Linux/macOS에서 실행)
+PhotoViewer/gradlew text eol=lf

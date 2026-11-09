@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- 다크 모드: 색상은 values-night/colors.xml, 상태바·내비게이션 바 아이콘만 밝게 -->
+    <style name="Theme.Imageviewdemo" parent="Base.Theme.Imageviewdemo">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+    </style>
+</resources>

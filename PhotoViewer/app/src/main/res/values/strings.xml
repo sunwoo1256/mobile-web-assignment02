@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">PhotoBlog</string>
+    <string name="app_tagline">사진으로 기록하는 나의 블로그</string>
+
+    <!-- 로그인 -->
+    <string name="login_title">로그인</string>
+    <string name="login_subtitle">계정으로 로그인하고 사진을 공유해 보세요</string>
+    <string name="hint_username">아이디</string>
+    <string name="hint_password">비밀번호</string>
+    <string name="label_server">서버</string>
+    <string name="server_local">로컬</string>
+    <string name="server_cloud">클라우드</string>
+    <string name="server_custom">직접 입력</string>
+    <string name="hint_server_url">서버 주소</string>
+    <string name="btn_login">로그인</string>
+    <string name="login_footnote">계정은 서버 관리자 화면(/admin)에서 만들 수 있습니다.</string>
+    <string name="error_required">입력해 주세요</string>
+    <string name="error_login_failed">아이디 또는 비밀번호가 올바르지 않습니다.</string>
+    <string name="error_server_unreachable">서버에 연결할 수 없습니다.\n주소를 확인하세요: %1$s</string>
+    <string name="session_expired">로그인이 만료되었습니다. 다시 로그인해 주세요.</string>
+
+    <!-- 메인(피드) -->
+    <string name="btn_download">동기화</string>
+    <string name="btn_upload">새로운 이미지 게시</string>
+    <string name="action_logout">로그아웃</string>
+    <string name="text_initial">동기화 버튼을 눌러 이미지를 불러오세요.</string>
+    <string name="text_syncing">동기화 중...</string>
+    <string name="text_load_success">이미지 로드 성공! · 게시물 %1$d개</string>
+    <string name="text_no_images">불러올 이미지가 없습니다.</string>
+    <string name="empty_title">아직 게시물이 없어요</string>
+    <string name="empty_message">오른쪽 아래 버튼으로 첫 사진을 올려보세요</string>
+    <string name="toolbar_subtitle">\@%1$s · %2$s</string>
+    <string name="image_description">게시물 이미지</string>
+    <string name="more_options">더보기</string>
+
+    <!-- 좋아요·댓글·조회수·삭제 -->
+    <string name="like">좋아요</string>
+    <string name="comments">댓글</string>
+    <string name="views">조회수</string>
+    <string name="error_like_failed">좋아요를 반영하지 못했습니다.</string>
+    <string name="action_delete">삭제</string>
+    <string name="delete_post_title">게시물을 삭제할까요?</string>
+    <string name="delete_post_message">삭제한 게시물과 댓글은 되돌릴 수 없습니다.</string>
+    <string name="delete_comment_title">댓글을 삭제할까요?</string>
+    <string name="cancel">취소</string>
+    <string name="post_deleted">게시물을 삭제했습니다.</string>
+    <string name="error_delete_failed">삭제하지 못했습니다: %1$s</string>
+
+    <!-- 상세 -->
+    <string name="detail_title">게시물</string>
+    <string name="comment_header">댓글 %1$d</string>
+    <string name="no_comments">아직 댓글이 없어요. 첫 댓글을 남겨보세요!</string>
+    <string name="hint_comment">댓글 달기...</string>
+    <string name="send">보내기</string>
+    <string name="error_comment_failed">댓글을 등록하지 못했습니다: %1$s</string>
+    <string name="error_load_post">게시물을 불러오지 못했습니다: %1$s</string>
+
+    <!-- 업로드 -->
+    <string name="upload_title">새 게시물</string>
+    <string name="label_title">제목</string>
+    <string name="label_text">본문</string>
+    <string name="pick_image_title">사진을 선택하세요</string>
+    <string name="pick_image_hint">탭하여 갤러리에서 고르기</string>
+    <string name="btn_change_image">사진 변경</string>
+    <string name="image_preview_description">선택한 이미지 미리보기</string>
+    <string name="btn_do_upload">게시하기</string>
+    <string name="status_need_input">제목, 본문, 이미지를 모두 입력하면 업로드할 수 있습니다.</string>
+    <string name="status_ready">업로드할 준비가 되었습니다.</string>
+    <string name="status_uploading">업로드 중...</string>
+</resources>

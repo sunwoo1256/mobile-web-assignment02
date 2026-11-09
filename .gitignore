@@ -1,0 +1,46 @@
+# ===== Python / Django =====
+venv/
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3
+staticfiles/
+.env
+
+# coverage
+htmlcov/
+.coverage
+
+# 업로드 미디어는 제외하되 default_error.png만 커밋 유지
+PhotoBlogServer/media/*
+!PhotoBlogServer/media/images/
+PhotoBlogServer/media/images/*
+!PhotoBlogServer/media/images/default_error.png
+
+# ===== Android / Gradle =====
+.gradle/
+build/
+local.properties
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+.vscode/
+Plan.md
+
+# ===== YOLOv5 =====
+*.pt
+YOLOv5/runs/
+
+# ===== 작업 도구 =====
+.claude/
+CLAUDE.md
+TASK_*.md
+
+# Word 편집 중 생기는 임시 파일
+~$*.docx

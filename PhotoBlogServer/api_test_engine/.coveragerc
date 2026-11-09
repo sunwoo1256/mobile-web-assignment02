@@ -1,0 +1,7 @@
+[run]
+branch = True
+
+[report]
+# CLI 진입점(python photoblog_api.py)은 테스트에서 main()을 직접 호출해 검증한다
+exclude_also =
+    if __name__ == .__main__.:
