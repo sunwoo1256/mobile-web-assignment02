@@ -246,6 +246,7 @@ def run(
             imc = im0.copy() if save_crop else im0  # for save_crop
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             detected = [0 for _ in range(len(names))]  # added
+            boxes = []  # added (편의기능)
             if len(det):
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_boxes(im.shape[2:], det[:, :4], im0.shape).round()
@@ -258,6 +259,7 @@ def run(
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
                     detected[int(cls)] = 1  # added
+                    boxes.append([*xyxy, conf, cls])  # added (편의기능)
                     c = int(cls)  # integer class
                     label = names[c]
                     confidence = float(conf)
@@ -286,6 +288,7 @@ def run(
 
             # Stream results
             im0 = annotator.result()
+            cd.track(boxes, im0)  # added (편의기능)
             cd.add(names, detected, save_dir, im0)  # added
             if view_img:
                 if platform.system() == "Linux" and p not in windows:
