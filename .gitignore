@@ -44,3 +44,6 @@ TASK_*.md
 
 # Word 편집 중 생기는 임시 파일
 ~$*.docx
+
+# 편의 기능 2: 오프라인 업로드 큐
+YOLOv5/upload_queue/
